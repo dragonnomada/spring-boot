@@ -1,0 +1,7 @@
+javac Hello.java
+
+-> Hello.class
+
+java Hello
+
+-> "Hello Java"
