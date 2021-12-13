@@ -20,9 +20,6 @@ public class TodoController {
 
     TodoService todoService = new TodoServiceImpl();
     
-    // curl -X PUT http://localhost:8081/api/todos/new 
-    //   -H 'Content-Type: application/json' 
-    //   -d '{ "title": "Hola mundo" }'
     @PutMapping("/new")
     public Todo putTodo(@RequestParam("title") String title) {
         return todoService.addTodo(title);
