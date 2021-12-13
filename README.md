@@ -24,6 +24,10 @@ LinkedIn: [/in/dragonnomada](https://www.linkedin.com/in/dragonnomada/)
 
 This is a master course about [Spring Boot](https://spring.io/projects/spring-boot).
 
+## Links
+
+[Click here for Spring Boot Links](https://pinboard.opera.com/view/7dad86f4-2a77-4eb8-a05f-8efe6388f370)
+
 ## Content
 
 Módulo 1: EL PROYECTO DE SPRING Y EL FRAMEWORK
