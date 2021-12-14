@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Thymeleaf Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <h1 th:text=${title}></h1>
+    <h2 th:text=#{demo.title}></h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="demo : ${demos}">
+                <td th:text="${{demo.getTitle()}}">UNKNOWN</td>
+                <td>
+                    <form action="#" th:action="@{/demo/{id}/update(id=${demo.getId()})}" th:object="${demo}" method="post">
+                        <input type="submit" value="Change Title">
+                    </form>
+                    <div>
+                        <button>Show</button>
+                        <script th:inline="javascript">
+                            (parent => {
+                                // console.log(parent)
+                                const button = parent.querySelector("button");
+                                const demo = /*[[${demo}]]*/ ""
+                                button.addEventListener("click", () => {
+                                    alert(JSON.stringify(demo))
+                                })
+                            })(document.currentScript.parentElement)
+                        </script>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script th:inline="javascript">
+        const demos = /*[[${demos}]]*/ "";
+        console.log(demos);
+    </script>
+</body>
+
+</html>

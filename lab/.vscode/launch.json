@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ServiceTestApplication<service-test>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.example.servicetest.ServiceTestApplication",
+            "projectName": "service-test",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ThTestApplication<th-test>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.example.thtest.ThTestApplication",
+            "projectName": "th-test",
+            "args": ""
+        }
+    ]
+}
