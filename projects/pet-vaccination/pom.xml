@@ -9,12 +9,12 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>crud-app</artifactId>
+	<artifactId>pet-vaccination</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>crud-app</name>
-	<description>CRUD Repository App</description>
+	<name>pet-vaccination</name>
+	<description>Pet Vaccination Project</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -31,10 +31,7 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.18.22</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 
