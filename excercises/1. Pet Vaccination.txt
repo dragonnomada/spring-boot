@@ -1,0 +1,43 @@
+Ex. 1 - Pet Vaccination
+
+MODEL:
+
+class Pet:
+  long id
+  String name
+  String kind
+  boolean vaccinated
+
+SERVICE:
+
+interface PetService:
+  List<Pet> getAll()
+  List<Pet> getAllByKind(String kind)
+  Pet getById()
+  Pet addPet(long id, String name, String kind)
+  Pet updatePetName(long id, String name)
+  Pet setPetVaccinated(long id)
+  Pet setPetUnvaccinated(long id)
+
+SERVICE IMPLEMENTED:
+
+class PetServiceNoUpdatable
+
+class PetServiceUpdatable
+
+CONTROLLER API:
+
+@RestController
+@RequestMapping("/api/pets")
+class PetApiController:
+
+  @Autowired
+  @Qualifier("petServiceNoUpdatable") // @Qualifier("petServiceUpdatable")
+  PetService petService;
+
+  @GetMapping("")
+  public List<Pet> getAll(@RequestParam(value="kind", defaultValue="*") String kind)
+
+  @PostMapping("/{id}/vaccinated")
+  public Pet updateVaccinated()
+  

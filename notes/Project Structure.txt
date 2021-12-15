@@ -1,0 +1,18 @@
+config
+  - TodoConfig.java
+model
+  - Todo.java
+repository
+  - TodoRepository.java
+service
+  + impl
+    - TodoServiceImpl.java
+  - TodoService.java
+controller
+  + api
+    - TodoApiController.java
+  + view
+    - TodoViewController.java
+
+* templates
+  - TodoView.html

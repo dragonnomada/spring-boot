@@ -1,0 +1,16 @@
+-- Login to MySQL
+mysql -u root -p
+Enter Password: password
+
+-- Creates the new database
+mysql> create database db_example; 
+
+-- Creates the user
+mysql> create user 'springuser'@'%' identified by 'ThePassword'; 
+
+-- Gives all privileges to the new user on the newly created database
+mysql> grant all on db_example.* to 'springuser'@'%'; 
+
+-- Login to MySQL
+mysql db_example -u springuser -p
+Enter Password: ThePassword
