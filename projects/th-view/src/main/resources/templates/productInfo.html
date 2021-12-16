@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Thymeleaf Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<h1 th:text="${title}">Hola Thymeleaf</h1>
+	
+	<div>
+		<p th:text="${product.getName()}">Coca Cola</p>
+		<p th:text="'$' + ${product.price}">$15.99</p>
+	</div>
+	
+	<ul>
+		<li th:each="product: ${products}"
+			th:text="${product.name} + ' $' + ${product.price}">Coca Cola $15.99</li>
+	</ul>
+	
+	<div>
+		<button>Pulsame</button>
+	</div>
+</body>
+
+</html>
