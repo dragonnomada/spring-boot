@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Thymeleaf Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+	<h1>Información del Producto</h1>
+	
+	<div>
+		
+		<img style="width: 80px; height: 80px; object-fit: cover; border-radius: 100%;" src="http://placekitten.com/300"
+			th:src="${product.picture}">
+		
+		<p th:text="${product.name}">Chocolate</p>
+		
+		<p th:text="'$' + ${product.price}">$15.99</p>
+	
+		<div>
+			<a href="/products/xx/edit"
+				th:href="@{/products/{id}/edit(id=${product.id})}">Editar</a>
+			<a href="/products/xx/remove"
+				th:href="@{/products/{id}/remove(id=${product.id})}">Eliminar</a>
+		</div>
+
+</body>
+
+</html>

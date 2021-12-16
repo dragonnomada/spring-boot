@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Thymeleaf Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	
+	<h1>Nuevo Producto</h1>
+	
+	<div>
+		<form th:action="@{/products/new}" th:object="${product}" method="POST">
+			
+			<input type="text" placeholder="Nombre" th:field="*{name}">
+			<input type="number" placeholder="Precio" th:field="*{price}">
+			<input type="text" placehoder="Imagen" th:field="*{picture}">
+			
+			<button type="submit">Crear</button>	
+		
+		</form>
+	</div>
+	
+</body>
+
+</html>
