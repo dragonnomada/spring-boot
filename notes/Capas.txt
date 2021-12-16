@@ -1,0 +1,18 @@
+Model (Protocol | Schema | Data)
+
+Repository (Queries | CRUD | Transactions)
+
+Service (Operations | Business Security Logical Layer)
+
+Controller (API -> DATA | VIEW -> TEMPLATES/UI)
+
+View (HTML | CSS | JS | API)
+
+**
+
+Configuraciones Avanzadas (HTTP Status | JSON/XML | ...)
+
+Seguridad (Sessions | Tokens | Cache | Métricas)
+
+Pruebas Unitarias (Repositorio | Servicio | Controlador | Vistas)
+

@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Thymeleaf Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+	<div>
+		<form th:action="@{/person/{id}/update(id=${person.id})}" th:object="${person}" method="POST">
+			<input th:field="*{id}">
+			<input th:field="*{name}">
+			<input th:field="*{age}">
+			<button type="submit">actualizar</button>
+		</form>
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+// ... service/MyService.java
+interface MyService
+
+// ... service.impl/MyServiceImpl1.java
+class MyServiceImpl1 extends MyService
+
+// ... service.impl/MyServiceImpl2.java
+class MyServiceImpl2 extends MyService
+
+// ... config/MyConfig.java
+
+@Bean
+public MyService myService1() {
+  return new MyServiceImpl1();
+}
+
+@Bean
+public MyService myService2() {
+  return new MyServiceImpl2();
+}
+
+// ... controller.api/MyController.java
+
+@Autowired
+@Qualifier("myService1")
+MyService myService1
+
+@Autowired
+@Qualifier("myService2")
+MyService myService2
+
+---
+
+myServiceReadOnly
+
+myServiceWriteOnly
