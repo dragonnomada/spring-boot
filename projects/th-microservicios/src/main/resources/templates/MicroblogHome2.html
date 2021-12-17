@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Thymeleaf Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+	<h1>Microblog</h1>
+	
+	<div id="post-input" hidden>
+		<input placeholder="Escribe lo que estás pensando">
+		<button onClick="createPost()">Enviar</button>
+		<script th:inline="javascript">
+			function createPost() {
+				// TODO: 1. Cómo recupero el texto del input
+				// TODO: 2. Cómo recupero el authorName
+				// TODO: 3. Cómo garantizo que otro script no reemplace esta función [X] 
+			}
+		
+			console.log("Hola mundo :D")
+			
+			const parent = document.currentScript.parentElement;
+			
+			console.log(parent)
+			
+			const authorName = prompt("¿Cuál es tu nombre?");
+			
+			if (/^[A-Za-z]+$/.test(authorName)) {			
+				parent.hidden = false
+			} else {
+				alert("No es un nombre válido, recarga la ventana")
+			}
+			
+			//const button = parent.querySelector("button")
+			
+			//button.addEventListener("click", async () => {})
+		</script>
+	</div>
+	
+	<div>
+		<div th:each="post: ${posts}">
+			<p th:text="${post.content}">POST CONTENT</p>
+			<p>
+				<span><strong th:text="${post.authorName}">AUTHOR NAME</strong></span> 
+				<span><small th:text="${post.createAt}">POST DATE</small></span>
+			</p>
+			<script th:inline="javascript">
+				function createPost() {
+					// ...
+				}
+			</script>
+		</div>
+	</p/div>
+
+</body>
+
+</html>

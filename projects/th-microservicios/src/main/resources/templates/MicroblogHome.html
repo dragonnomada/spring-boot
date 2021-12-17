@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Thymeleaf Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <script src="/view-model/CreatePostViewModel.js"></script>
+    <script src="/view-model/ListPostsViewModel.js"></script>
+</head>
+
+<body>
+
+	<h1>Microblog</h1>
+	
+	<div hidden>
+		
+		<input placeholder="Escribe lo que estás pensando">
+		<button>Enviar</button>
+		
+		<script th:inline="javascript">
+			new CreatePostViewModel(document.currentScript.parentElement).getAuthorName().show()
+		</script>
+	</div>
+	
+	<div>
+		<div th:each="post: ${posts}">
+			<p th:text="${post.content}">POST CONTENT</p>
+			<p>
+				<span><strong th:text="${post.authorName}">AUTHOR NAME</strong></span> 
+				<span><small th:text="${post.createAt}">POST DATE</small></span>
+			</p>
+		</div>
+		
+		<script th:inline="javascript">
+			window.listPostsViewModel = new ListPostsViewModel(document.currentScript.parentElement)
+		</script>
+	</div>
+
+</body>
+
+</html>

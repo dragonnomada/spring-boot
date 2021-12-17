@@ -24,6 +24,27 @@ LinkedIn: [/in/dragonnomada](https://www.linkedin.com/in/dragonnomada/)
 
 This is a master course about [Spring Boot](https://spring.io/projects/spring-boot).
 
+## AVISOS IMPORTANTES
+
+**17 de diciembre de 2021**
+
+*Ejercicio de MicroServicios completado*
+
+Hola a todos, lamento no poderles enseñar el ejercicio funcionando. 
+El ejercicio quedó resulto y adjunto y pueden encontrar las capturas de pantalla
+como [Microservicios1.png](./schemas/Microservicios1.png),
+[Microservicios1.png](./schemas/Microservicios2.png),
+[Microservicios1.png](./schemas/Microservicios3.png),
+[Microservicios1.png](./schemas/Microservicios4.png),
+[Microservicios1.png](./schemas/Microservicios5.png),
+[Microservicios1.png](./schemas/Microservicios6.png)
+
+![Microservicios1.png](./schemas/Microservicios6.png)
+
+El día lunes lo revisamos, pero si pueden revísenlo este fin de semana.
+
+---
+
 ## Links
 
 [Click here for Spring Boot Links](https://pinboard.opera.com/view/7dad86f4-2a77-4eb8-a05f-8efe6388f370)
