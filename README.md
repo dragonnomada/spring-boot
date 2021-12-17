@@ -9,11 +9,11 @@
 Hola a todos, lamento no poderles enseñar el ejercicio funcionando. 
 El ejercicio quedó resulto y adjunto y pueden encontrar las capturas de pantalla
 como [Microservicios1.png](./schemas/Microservicios1.png),
-[Microservicios1.png](./schemas/Microservicios2.png),
-[Microservicios1.png](./schemas/Microservicios3.png),
-[Microservicios1.png](./schemas/Microservicios4.png),
-[Microservicios1.png](./schemas/Microservicios5.png),
-[Microservicios1.png](./schemas/Microservicios6.png)
+[Microservicios2.png](./schemas/Microservicios2.png),
+[Microservicios3.png](./schemas/Microservicios3.png),
+[Microservicios4.png](./schemas/Microservicios4.png),
+[Microservicios5.png](./schemas/Microservicios5.png),
+[Microservicios6.png](./schemas/Microservicios6.png)
 
 ![Microservicios1.png](./schemas/Microservicios6.png)
 
