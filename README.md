@@ -1,5 +1,22 @@
 # Java Spring Boot Course
 
+## AVISOS IMPORTANTES
+
+**17 de diciembre de 2021**
+
+*Ejercicio de MicroServicios completado*
+
+Hola a todos, lamento no poderles enseñar el ejercicio funcionando. 
+El ejercicio quedó resulto y adjunto y pueden encontrar las capturas de pantalla
+como [Microservicios1.png](./schemas/Microservicios1.png),
+[Microservicios1.png](./schemas/Microservicios2.png),
+[Microservicios1.png](./schemas/Microservicios3.png),
+[Microservicios1.png](./schemas/Microservicios4.png),
+[Microservicios1.png](./schemas/Microservicios5.png),
+[Microservicios1.png](./schemas/Microservicios6.png)
+
+![Microservicios1.png](./schemas/Microservicios6.png)
+
 [![Alan Badillo Salas](https://avatars.githubusercontent.com/u/79223578?s=40&v=4 "Alan Badillo Salas")](https://github.com/dragonnomada) Por [Alan Badillo Salas](https://github.com/dragonnomada)
 
 **About Me**
@@ -23,23 +40,6 @@ LinkedIn: [/in/dragonnomada](https://www.linkedin.com/in/dragonnomada/)
 ## Introduction
 
 This is a master course about [Spring Boot](https://spring.io/projects/spring-boot).
-
-## AVISOS IMPORTANTES
-
-**17 de diciembre de 2021**
-
-*Ejercicio de MicroServicios completado*
-
-Hola a todos, lamento no poderles enseñar el ejercicio funcionando. 
-El ejercicio quedó resulto y adjunto y pueden encontrar las capturas de pantalla
-como [Microservicios1.png](./schemas/Microservicios1.png),
-[Microservicios1.png](./schemas/Microservicios2.png),
-[Microservicios1.png](./schemas/Microservicios3.png),
-[Microservicios1.png](./schemas/Microservicios4.png),
-[Microservicios1.png](./schemas/Microservicios5.png),
-[Microservicios1.png](./schemas/Microservicios6.png)
-
-![Microservicios1.png](./schemas/Microservicios6.png)
 
 El día lunes lo revisamos, pero si pueden revísenlo este fin de semana.
 
