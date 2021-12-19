@@ -7,7 +7,7 @@
 *Ejercicio de MicroServicios completado*
 
 Hola a todos, lamento no poderles enseñar el ejercicio funcionando. 
-El ejercicio quedó resulto y adjunto y pueden encontrar las capturas de pantalla
+El ejercicio quedó resuelto, pueden encontrar las capturas de pantalla
 como [Microservicios1.png](./schemas/Microservicios1.png),
 [Microservicios2.png](./schemas/Microservicios2.png),
 [Microservicios3.png](./schemas/Microservicios3.png),
