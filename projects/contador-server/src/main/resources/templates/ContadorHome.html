@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Thymeleaf Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+	<script>
+		function updateCounter(counter) {
+			/*for (let parent of document.querySelectorAll(".counter")) {
+				if (parent.id === `counter-${counter.id}`) {
+					parent.dispatchEvent(new CustomEvent("update", {
+						detail: {
+							counter
+						}
+					}))	
+				}
+			}*/
+			const parent = document.querySelector(`#counter-${counter.id}`)
+			parent.dispatchEvent(new CustomEvent("update", {
+				detail: {
+					counter
+				}
+			}))	
+		}
+	</script>
+
+	<script>
+		async function counterApi(operation, namespace) {
+			// Crear un formulario virtual
+			const formData = new FormData()
+			
+			formData.append("namespace", namespace)
+			
+			// Envíando el formulario virtual al API de incremento
+			const response = await fetch(`/api/counter/${operation}`, {
+				method: "post",
+				body: formData 
+			})
+			
+			if (response.status !== 200) {
+				const error = await response.text()
+				alert(`${error}`)
+				console.warn(error)
+				return
+			}
+			
+			const data = await response.json()
+			
+			const counters = data
+			
+			for (let counter of counters) {
+				updateCounter(counter)
+			}
+		}
+	</script>
+
+	<script>
+		class CounterViewModel {
+			
+			// montado | construcción -> enlazar controles y eventos
+			constructor(parent) {
+				this.parent = parent;
+				
+				this.labelNamespace = parent.querySelector(".lbl-ns");
+				this.labelValue = parent.querySelector(".lbl-val");
+				this.buttonDec = parent.querySelector(".btn-dec");
+				this.buttonInc = parent.querySelector(".btn-inc");
+				this.buttonReset = parent.querySelector(".btn-reset");
+				
+				this.buttonDec.addEventListener("click", () => {
+					//alert("Decrementando " + this.labelNamespace.textContent)
+					//console.log(this.labelNamespace)
+					counterApi("decrement", this.labelNamespace.textContent)
+				})
+				this.buttonInc.addEventListener("click", () => {
+					//alert("Decrementando " + this.labelNamespace.textContent)
+					//console.log(this.labelNamespace)
+					counterApi("increment", this.labelNamespace.textContent)
+				})
+				this.buttonReset.addEventListener("click", () => {
+					//alert("Decrementando " + this.labelNamespace.textContent)
+					//console.log(this.labelNamespace)
+					counterApi("reset", this.labelNamespace.textContent)
+				})
+				
+				this.parent.addEventListener("update", ({ detail }) => {
+					const { counter } = detail
+					
+					this.labelValue.textContent = counter.value
+				})
+			}
+			
+		}
+	</script>
+
+	<div th:each="counter: ${counters}" th:id="'counter-' + ${counter.id}" class="counter">
+		<p class="lbl-ns" th:text="${counter.namespace}">A</p>
+		<p class="lbl-val" th:text="${counter.value}">0</p>
+		<button class="btn-dec">Decrementar</button>
+		<button class="btn-inc">Incrementar</button>
+		<button class="btn-reset">Reiniciar</button>
+		
+		<script th:inline="javascript">
+			new CounterViewModel(document.currentScript.parentElement)
+		</script>
+	</div>
+
+</body>
+
+</html>
