@@ -28,7 +28,7 @@ public class TestUserRepository {
 		
 		User user = User.builder().name("Ana").age(23).build();
 		
-		User userSaved = entityManager.persistAndFlush(user);// entityManager.persistAndFlush(user); // userRepository.save(user);
+		User userSaved = entityManager.persist(user);// entityManager.persistAndFlush(user); // userRepository.save(user);
 		
 		assertThat(userSaved.getId())
 			.withFailMessage("El usuario no tiene el primer id")
@@ -47,14 +47,21 @@ public class TestUserRepository {
 		for (String name : names) {
 			User theUser = User.builder().name(name).age(5 * id).build();
 			
-			User nextUser = entityManager.persistAndFlush(theUser); //entityManager.persistAndFlush(theUser); //userRepository.save(theUser);
+			User nextUser = entityManager.persist(theUser); //entityManager.persistAndFlush(theUser); //userRepository.save(theUser);
 			
 			assertThat(nextUser.getId())
 				.withFailMessage(String.format("El usuario no tiene id = %d <> %d", ++id, nextUser.getId()))
 				.isEqualTo(id);
 		}
 		
+		entityManager.flush();
+	/*}
+	
+	@Test
+	public void test2CheckIfFirstUser_isAna() {*/
 		System.out.println("test2_checkIfFirstUser_isAna");
+
+		entityManager.flush();
 		
 		int total = 0;
 		
@@ -83,7 +90,5 @@ public class TestUserRepository {
 			.withFailMessage("No tine 23 años")
 			.isEqualTo(23);
 	}
-	
-	
 	
 }
