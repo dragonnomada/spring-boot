@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>File Vault - Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+	<h1 th:text="'Bienvenido, ' + ${user.getUsername()}">BIENVIDA</h1>
+
+	<div th:if="${message}">
+		<h2 th:text="${message}"/>
+	</div>
+
+	<form action="/public/upload" method="POST" enctype="multipart/form-data">
+		<input type="hidden" name="token" th:value="${token}">
+		<input type="file" name="file">
+		<button type="submit">Enviar</button>
+	</form>
+	
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Path</th>
+				<th>Name</th>
+				<th>Size</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="file : ${files}">
+				<td th:text="${file.id}">ID</td>
+				<td th:text="${file.path}">Path</td>
+				<td th:text="${file.filename}">Name</td>
+				<td th:text="${file.size}">Size</td>
+				<td>
+					<a th:href="@{/public/file/{id}(id=${file.id})}">download</a>
+					<a >modificar</a>
+					<a >eliminar</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+
+</html>

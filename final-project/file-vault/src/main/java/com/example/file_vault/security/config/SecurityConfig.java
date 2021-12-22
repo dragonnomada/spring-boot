@@ -20,6 +20,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.authorizeRequests()
 			// TODO: Agregar rutas públicas que no requieran token (limitar a recursos públicos y logins)
 			.antMatchers(HttpMethod.GET, "/public/**").permitAll()
+			.antMatchers(HttpMethod.POST, "/public/**").permitAll()
 			.antMatchers(HttpMethod.GET, "/error").permitAll()
 			//.antMatchers(HttpMethod.GET, "/admin").hasRole("ROLE_ADMIN")
 			//	.and().hasRole("ROLE_USER")

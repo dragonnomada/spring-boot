@@ -34,6 +34,7 @@ public class File {
 	
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_file_id")
+	@Getter @Setter
 	private User user;
 	
 }

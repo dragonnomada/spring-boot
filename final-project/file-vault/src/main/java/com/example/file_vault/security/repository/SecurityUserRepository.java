@@ -10,6 +10,8 @@ public interface SecurityUserRepository extends CrudRepository<SecurityUser, Lon
 
 	public Optional<SecurityUser> findByUsername(String username);
 	
+	public Optional<SecurityUser> findByToken(String token);
+	
 	public Optional<SecurityUser> findByUsernameAndPassword(String username, String password);
 	
 }

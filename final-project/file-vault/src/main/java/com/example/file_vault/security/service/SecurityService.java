@@ -56,6 +56,18 @@ public class SecurityService {
 		throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid user");
 	}
 	
+	public SecurityUser getUserByToken(String token) {
+		// TODO: Obtener los datos del usuario y sus roles desde la base de datos
+		
+		Optional<SecurityUser> securityUserOptional = securityUserRepository.findByToken(token);
+		
+		if (securityUserOptional.isPresent()) {
+			return securityUserOptional.get();
+		}
+		
+		throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid user");
+	}
+	
 	public String generateToken(SecurityUser user) {
 		
 		// TODO: Modificar la forma de generar el token
@@ -85,7 +97,7 @@ public class SecurityService {
 		
 		System.out.println(String.format("username: %s | Bearer %s", user.getUsername(), token));
 
-		return JWTAuthorizationFilter.PREFIX + token;
+		return token;
 		
 	}
 	

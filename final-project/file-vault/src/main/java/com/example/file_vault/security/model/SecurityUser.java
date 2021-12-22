@@ -1,11 +1,13 @@
 package com.example.file_vault.security.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+
+import com.example.file_vault.model.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -34,6 +36,11 @@ public class SecurityUser {
 	
 	@Getter @Setter
 	private String roles;
+	
+	@JsonIgnore
+	@OneToOne(mappedBy="securityUser", fetch = FetchType.LAZY)
+	@Getter @Setter
+	private User user;
 	
 	public long calculateExpirationMillis() {
 		// TODO: Dependiendo los roles del usuario, calcular el tiempo de expiración
