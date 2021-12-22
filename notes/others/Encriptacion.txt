@@ -1,0 +1,21 @@
+CONTENT: { "username": "batman", "expires": "2021-12-24T18:59:32.000Z", role: "ROLE_ADMIN", ... }
+
+SECRET: abc123 | MY_COMPANY/SECRET_PROJECT_12324
+
+ALG: HS512 | ES512 | AES256
+
+-> PRIVATE KEY: ef889233... (512)
+-> PUBLIC KEY: g123fde67... (512)
+
+TOKEN: g123fde67...
+
+---
+
+TOKEN: g123fde67... + SECRET: abc123
+
+-> CONTENT: { "username": "batman", "expires": "2021-12-24T18:59:32.000Z", role: "ROLE_ADMIN", ... }
+
+
+
+
+
